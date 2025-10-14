@@ -1,0 +1,75 @@
+NAME:SARAVANA BALAJI K
+USN:ENG24CY0158
+CLASS:3A
+ROLL-NO:26
+1.	What is a bash shell script? Give an example.
+A bash shell script is like a list of commands written in a file that the computer can follow step by step. It helps you do tasks automatically instead of typing commands one by one.
+Example:
+bash
+#!/bin/bash
+echo "Hello World"
+This script says “Hello World” when you run it.
+________________________________________
+2.	Write a simple shell script to print “Hello World”.
+Just write this in a file:
+bash
+#!/bin/bash
+echo "Hello World"
+When you run it, it will show "Hello World" on the screen.
+________________________________________
+3.	Why do we use comments (#) in shell scripts?
+Comments start with #. They are notes you write to explain what your script does. The computer ignores them, but they help people understand the script better.
+________________________________________
+4.	How to declare variables like int, float, string, etc., in bash?
+In bash, you just assign a value to a name; you don’t have to say the type. For example:
+bash
+age=25
+price=9.99
+name="Alice"
+is_valid=true
+char="A"
+Bash treats all as text but you can use them as numbers or words.
+________________________________________
+5.	Write a shell script to show the current date and time.
+Here’s a small script:
+bash
+#!/bin/bash
+echo "Current Date and Time: $(date)"
+It shows the date and time when you run it.
+________________________________________
+6.	Difference between constant and variable in bash.
+•	A variable can change anytime.
+•	A constant is like a variable you don’t want to change.
+In bash, you can make a variable constant by using readonly. For example:
+bash
+readonly PI=3.14
+After this, PI can’t be changed.
+________________________________________
+7.	Shell script to read two numbers from user and add them.
+Here you go:
+bash
+#!/bin/bash
+read -p "Enter 1st number: " num1
+read -p "Enter 2nd number: " num2
+sum=$((num1 + num2))
+echo "Sum is $sum"
+It asks for two numbers, adds them, and shows the total.
+________________________________________
+8.	What does the source command do?
+source runs a script inside the current shell. It’s like copying all the commands into your current session so any variables or changes stay after it finishes.
+________________________________________
+9.	How to debug a shell script? Two ways.
+•	Run the script with this command to see each step:
+bash -x script.sh
+•	Or add set -x at the start of your script to turn on debugging, and set +x to turn it off later.
+________________________________________
+10.	Bash script to create and delete a file.
+Here’s a simple one:
+bash
+#!/bin/bash
+file="tempfile.txt"
+touch $file
+echo "$file created"
+rm $file
+echo "$file deleted"
+It makes a file called tempfile.txt then deletes it and tells you what it did.
