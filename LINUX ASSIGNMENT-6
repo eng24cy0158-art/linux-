@@ -1,0 +1,58 @@
+NAME:SARAVANA BALAJI K
+USN:ENG24CY0158
+CLASS:3A
+ROLL-NO:26
+1.	Which command lists files and folders in a directory?
+The ls command shows you the stuff inside a folder. Just like opening a drawer to look inside, typing ls lets you see what’s there. If you want to see more details like file sizes and dates, use ls -l. It’s like looking with a magnifying glass!
+________________________________________
+2.	How to create a new folder named 123test_dir?
+Think of mkdir as “make a new box.” By typing:
+mkdir 123test_dir
+you’re telling the computer to make a new empty folder named 123test_dir where you can store things later.
+________________________________________
+3.	What does the sed command do?
+sed is like a magical text editor that can quickly find words and replace them in files without opening them. For example, if you want to swap every “apple” with “orange” in a list, you can run:
+sed 's/apple/orange/g' file.txt
+and it will do all those swaps for you at once.
+________________________________________
+4.	Which command shows quick one-line explanations of commands?
+Use whatis to get a fast idea about what a command does, like a dictionary giving you a quick meaning. For example:
+whatis ls
+might tell you “ls - list files,” so you know basically what it is.
+________________________________________
+5.	How to make an empty file named notes.txt?
+Typing:
+touch notes.txt
+creates a brand-new empty file named notes.txt. It’s like putting a blank page on your desk, ready for writing.
+________________________________________
+6.	What’s the difference between grep and awk?
+•	grep searches for certain words or phrases inside files. Like scanning a book for all the times “error” shows up:
+grep "error" file.log
+•	awk is more like a smart helper that not only finds words but can also pick out parts of sentences and do things with them. For example, show the second word on every line:
+awk '{print $2}' file.log
+________________________________________
+7.	How to give the file owner full permission to read, change, and run a file called script.sh?
+Use:
+chmod u+rwx script.sh
+This means you (the owner) can open, edit, and execute the file whenever you want.
+________________________________________
+8.	How are chown and chgrp different?
+•	chown changes who owns the file, like passing ownership of a book.
+Example:
+chown alice file.txt
+•	chgrp changes which group the file belongs to, like putting the book on a group’s bookshelf.
+Example:
+chgrp developers file.txt
+________________________________________
+9.	If you can’t run a file even though it’s there, how to fix?
+•	Check who owns the file and what permissions it has by typing:
+ls -l filename
+•	Find out which user you are with:
+whoami
+•	If you see you don’t have permission to run the file, add execute permission with:
+chmod u+x filename
+________________________________________
+10.	How to find .log files changed in the last 2 days in /var/log, show them on screen, and save the list?
+Use this command:
+find /var/log -name "*.log" -mtime -2 | tee recent_logs.txt
+It searches for .log files changed recently, shows them to you, and saves their names in a file called recent_logs.txt.
