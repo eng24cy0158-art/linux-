@@ -1,0 +1,98 @@
+NAME:SARAVANA BALAJI K
+USN:ENG24CY0158
+CLASS:3A
+ROLL-NO:26
+21. Shell script to check if a number is even or odd
+bash
+#!/bin/bash
+echo "Enter a number:"
+read num
+if (( num % 2 == 0 )); then
+    echo "$num is even"
+else
+    echo "$num is odd"
+fi
+22. Difference between if and case statements in bash
+•	if statement: Used for conditional execution, supports complex logical conditions and multiple comparisons.
+•	case statement: Used for pattern matching against a variable, simpler and cleaner for multiple discrete value checks.
+•	if is better for complex conditions; case is more efficient and readable for checking multiple specific values.
+23. Script to find the largest of three numbers
+bash
+#!/bin/bash
+echo "Enter three numbers:"
+read a b c
+if (( a >= b && a >= c )); then
+    echo "$a is the largest"
+elif (( b >= a && b >= c )); then
+    echo "$b is the largest"
+else
+    echo "$c is the largest"
+fi
+24. For loop to traverse an array in bash
+bash
+arr=(123 "Abs" -2.3 'A' 23.56 0)
+for element in "${arr[@]}"
+do
+    echo "$element"
+done
+25. Shell script to loop through all files in current directory and display their names
+bash
+#!/bin/bash
+for file in *
+do
+    if [ -f "$file" ]; then
+        echo "$file"
+    fi
+done
+26. Difference between while and until loops in bash
+•	while loop: Repeats as long as the condition is true.
+•	until loop: Repeats as long as the condition is false (opposite of while).
+27. Countdown timer script using a while loop
+bash
+#!/bin/bash
+echo "Enter the countdown start number:"
+read count
+while [ $count -ge 0 ]
+do
+    echo $count
+    ((count--))
+    sleep 1
+done
+echo "Countdown finished!"
+28. Using break and continue statements in loops
+•	break: Exits the loop completely.
+•	continue: Skips the current iteration and proceeds to the next iteration.
+Example:
+bash
+for i in {1..5}
+do
+    if [ $i -eq 3 ]; then
+        continue  # skip when i=3
+    fi
+    if [ $i -eq 4 ]; then
+        break   # exit loop when i=4
+    fi
+    echo $i
+done
+29. Script to check if a file exists or not using if and else
+bash
+#!/bin/bash
+echo "Enter the filename:"
+read filename
+if [ -f "$filename" ]; then
+    echo "$filename exists."
+else
+    echo "$filename does not exist."
+fi
+30. Script to calculate factorial of a number using for loop
+bash
+#!/bin/bash
+echo "Enter a number:"
+read num
+fact=1
+for (( i=1; i<=num; i++ ))
+do
+    fact=$((fact * i))
+done
+echo "Factorial of $num is $fact"
+
