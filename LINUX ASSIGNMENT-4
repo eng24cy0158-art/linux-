@@ -1,0 +1,56 @@
+NAME:SARAVANA BALAJI K
+USN:ENG24CY0158
+CLASS:3A
+ROLL-NO:26
+1. How would you use grep and tee to extract usernames from /etc/passwd, display them, and save to a file?
+The /etc/passwd file lists all user accounts, and the username is always the first part of each line (before the first colon). To grab just the usernames and save them while also seeing them on your screen, you can run:
+bash
+grep '^[^:]\+' /etc/passwd | cut -d: -f1 | tee usernames.txt
+This command finds all lines, extracts the username part, shows them on your screen, and saves them to usernames.txt at the same time.
+________________________________________
+2. A binary isn’t found in $PATH. How do you use which, find, and locate to troubleshoot and fix it?
+•	First, try which binaryname to see if it's in your PATH. If it returns nothing, the shell can't find it.
+•	Next, try locate binaryname (if the locate database is up to date) to quickly search your whole system for the file.
+•	If locate doesn't help, use find / -name 'binaryname' 2>/dev/null to search everywhere (this can take a while).
+•	Once you find the binary, you can either add its directory to your PATH (edit your .bashrc or .profile), or move/copy the binary to a directory already in your PATH (like /usr/local/bin).
+________________________________________
+3. Find all .log files modified in the last 24 hours in /var/log and save results to log_report.txt.
+Here's a command pipeline for that:
+bash
+find /var/log -type f -name "*.log" -mtime -1 | tee log_report.txt
+This finds all .log files changed in the last day, shows them, and saves the list to log_report.txt.
+________________________________________
+4. What’s the difference between shutdown -r now and reboot?
+•	shutdown -r now tells the system to shut down and then restart (reboot) immediately. It also notifies users and can handle more options.
+•	reboot is a simpler command that just restarts the system right away.
+•	Both restart the computer, but shutdown -r now is a bit more graceful and flexible.
+________________________________________
+5. How can you use tee to debug a script that generates both standard output and error messages?
+You can capture both normal output and errors by redirecting stderr to stdout, then piping to tee:
+bash
+./yourscript.sh 2>&1 | tee debug.log
+This way, you see everything on your screen and also save it to debug.log for later review.
+________________________________________
+6. Three real-world applications of Linux in industries:
+•	Web servers: Most of the world’s websites run on Linux servers (like Apache or Nginx).
+•	Embedded systems: Linux powers devices like smart TVs, routers, and even cars.
+•	Supercomputers: The majority of the world’s fastest supercomputers use Linux because it’s stable and customizable.
+________________________________________
+7. Differentiate application, system, and utility software in Linux:
+•	Application software: Programs you use to do tasks (like Firefox for browsing, LibreOffice for documents).
+•	System software: The core OS components (like the Linux kernel, device drivers) that make the computer work.
+•	Utility software: Tools that help maintain or manage the system (like ls, cp, top, or disk cleanup tools).
+________________________________________
+8. Key differences between open-source and proprietary operating systems:
+•	Open-source: The source code is available for anyone to view, modify, and share (e.g., Linux). Usually free, with a community of contributors.
+•	Proprietary: The source code is closed; only the company can change it (e.g., Windows, macOS). Usually paid, with support from the vendor.
+________________________________________
+9. Command to display the system’s kernel version:
+bash
+uname -r
+This shows the version number of the Linux kernel you’re running.
+________________________________________
+10. What’s the difference between head and tail in text processing?
+•	head shows you the first few lines of a file (default is 10 lines).
+•	tail shows you the last few lines of a file (also default is 10 lines).
+•	Both are handy for quickly peeking at the start or end of a file without opening the whole thing.
