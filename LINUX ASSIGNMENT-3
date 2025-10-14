@@ -1,0 +1,72 @@
+NAME:SARAVANA BALAJI K
+USN:ENG24CY0158
+CLASS:3A
+ROLL-NO:26
+1. What's the difference between man and what is?
+•	Think of man as a full instruction manual for a command. If you type man ls, you'll get a detailed guide with examples, options, and explanations.
+•	what is more like a quick summary. If you type  ls, you'll get a one-line description, such as "ls (1) - list directory contents".
+•	So, use man when you want the whole story, and  when you just want a quick intro.
+________________________________________
+2. How do you use tee to save and display the output of ls -l?
+•	If you want to see the list of files in your folder and also save that list to a file, run:
+bash
+ls -l | tee output.txt
+•	This shows the output on your screen and saves it to output.txt at the same time.
+________________________________________
+3. How can tee help with logging?
+•	Imagine you're running a script and want to watch its progress live, but also keep a record. You can do:
+bash
+./myscript.sh | tee log.txt
+•	Now, you see everything as it happens, and later you can check log.txt for the full history.
+________________________________________
+4. What are the steps to install Ubuntu 25.04 LTS on Oracle VirtualBox?
+1.	Download the Ubuntu 25.04 LTS ISO from the official site.
+2.	Open VirtualBox and click "New" to create a new virtual machine.
+3.	Name it (like "Ubuntu 25.04"), set type to Linux, and version to Ubuntu (64-bit).
+4.	Choose how much RAM to give it (at least 4 GB is good).
+5.	Create a virtual hard disk (25 GB or more).
+6.	Start the VM and select the ISO file as the startup disk.
+7.	Follow the on-screen instructions to install Ubuntu.
+8.	When done, remove the ISO and reboot the VM to start using Ubuntu.
+________________________________________
+5. What if you get a Kernel Panic Error during Ubuntu installation?
+•	First, check if your ISO file is corrupted—try downloading it again.
+•	Make sure your VM has enough RAM and the right settings (like enabling virtualization).
+•	Try turning off EFI or changing the chipset in VirtualBox settings.
+•	If you see a specific error message, search for it online for more targeted help.
+•	Sometimes, just restarting the VM or tweaking settings fixes it.
+________________________________________
+6. How do you display and change the system's hostname?
+•	To see your computer's name, type:
+bash
+hostname
+•	To change it using sysctl (not the usual way, but possible):
+bash
+sudo sysctl kernel.hostname=newname
+•	Usually, you'd use:
+bash
+sudo hostnamectl set-hostname newname
+________________________________________
+7. How do you show the calendar for August 1984?
+•	Just type:
+bash
+cal 8 1984
+•	You'll see the calendar for August 1984 right in your terminal.
+________________________________________
+8. How do you display system uptime and logged-in users together?
+•	The w command does both:
+bash
+w
+•	It shows how long your system has been running and who is currently logged in.
+________________________________________
+9. How do you list all ".c" files in /home/user using find?
+•	Run:
+bash
+find /home/user -type f -name "*.c"
+•	This finds every C source file in that folder and its subfolders.
+________________________________________
+10. How do you set file permissions so only the owner can read and write?
+•	Use:
+bash
+chmod 600 filename
+•	Now, only the owner can open or change the file—everyone else is locked out.
