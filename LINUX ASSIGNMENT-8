@@ -1,0 +1,96 @@
+NAME:SARAVANA BALAJI K
+USN:ENG24CY0158
+CLASS:3A
+ROLL-NO:26
+11. What is a user-defined function in shell scripting?
+A user-defined function is a named set of commands you write once and can use multiple times in your script to keep things organized and avoid repeating yourself.
+Example:
+bash
+my_function() {
+  echo "Hello, World!"
+}
+
+# To run the function
+my_function
+This will print "Hello, World!" whenever you call my_function.
+________________________________________
+12. Write a bash script with a function that multiplies two integers.
+bash
+#!/bin/bash
+
+multiply() {
+  local result=$(($1 * $2))
+  echo $result
+}
+
+read -p "Enter first number: " num1
+read -p "Enter second number: " num2
+
+product=$(multiply $num1 $num2)
+echo "Product is: $product"
+This script asks for two numbers, multiplies them using a function, and shows the product.
+________________________________________
+13. How are arrays declared in bash?
+•	1D array: A simple list like:
+bash
+arr=(apple banana orange)
+•	2D arrays: Bash doesn’t support these directly. You can simulate by using combined indices like:
+bash
+arr[0,0]=1
+arr[0,1]=2
+arr[1,0]=3
+•	3D arrays: Not directly supported; need complicated workarounds.
+Generally, bash works best with simple 1D arrays.
+________________________________________
+14. Shell script to display elements of an array:
+bash
+#!/bin/bash
+arr=(red green blue)
+
+for element in "${arr[@]}"; do
+  echo $element
+done
+This will print each color on its own line.
+________________________________________
+15. What is cron?
+cron is a tool in Linux that automatically runs tasks or scripts at set times, like daily backups.
+________________________________________
+16. Cron job to run backup script every day at midnight:
+text
+0 0 * * * /path/to/backup_script.sh
+This tells cron to run the backup script every day at 12:00 AM.
+________________________________________
+17. How to schedule a one-time job with at?
+Type:
+text
+at 23:00
+> /path/to/script.sh
+> <Ctrl-D>
+This schedules the script to run once at 11 PM. Press Ctrl-D to finish.
+________________________________________
+18. Script to display disk usage using df and du:
+bash
+#!/bin/bash
+echo "Disk space summary (df):"
+df -h
+echo "Disk usage for current folder (du):"
+du -sh .
+df -h shows disk space info for drives; du -sh . shows space used by the current folder.
+________________________________________
+19. How to log script output using tee?
+Run your script like this:
+text
+./yourscript.sh | tee output.log
+This shows output on screen and saves it to output.log.
+________________________________________
+20. How shell scripts automate admin tasks?
+Shell scripts can repeat important checks automatically, saving time and avoiding mistakes.
+Example: Checks disk space and emails an alert if space over 80%:
+bash
+#!/bin/bash
+THRESHOLD=80
+usage=$(df / | grep / | awk '{print $5}' | sed 's/%//')
+if [ "$usage" -gt "$THRESHOLD" ]; then
+  echo "Disk space is above threshold: ${usage}% used" | mail -s "Disk Alert" admin@example.com
+fi
+This script runs regularly and emails admin if disk usage is high.
