@@ -1,0 +1,67 @@
+NAME:SARAVANA BALAJI K
+USN:ENG24CY0158
+CLASS:3A
+ROLL-NO:26
+1. What is Linux? List three pros and cons of it.
+Linux is an operating system, just like Windows or Mac. What makes it special is that it’s free and open for anyone to use or change.
+Three good things about Linux:
+•	You don’t have to pay for it.
+•	It’s very secure and doesn’t get viruses easily.
+•	You can change almost anything about it if you want.
+Three not-so-good things:
+•	It can be tricky to learn if you’re new.
+•	Some popular programs or games might not work on it.
+•	Sometimes, new gadgets (like printers) don’t work right away.
+_______________________________________________________________
+2. Differences between Linux, Mac, Android, and Windows (six features):
+Feature	Linux	Mac	Android	Windows
+Free to use?	Yes	No	Yes	No
+Who makes it?	Anyone	Apple	Google/OEMs	Microsoft
+Devices	Many types	Only Apple	Phones/Tablets	Most PCs
+Customizable?	Very	Not much	Some	A little
+Main use	Servers/PCs	Apple PCs	Phones/Tablets	PCs/Laptops
+Security	Very strong	Strong	Good	Good
+________________________________________
+3. Why is Linux used for mainframe servers?
+•	It’s super reliable and rarely crashes, which is important for big companies.
+•	It’s very secure, so it’s hard for hackers to break in.
+•	It works well with old programs, so companies don’t have to change everything.
+________________________________________
+4. Linux File System Structure (with diagram):
+Linux organizes files in a big tree, starting from the top (called "/"). Here’s a simple picture:
+text
+/
+├── bin   # Basic programs
+├── etc   # Settings
+├── home  # User folders
+├── usr   # More programs
+├── var   # Changing files
+├── tmp   # Temporary files
+You can see this on a real Linux computer by typing: tree -L 2 /
+________________________________________
+5. How does Red Hat make money from Linux?
+Red Hat gives away Linux for free, but they make money by helping companies use it. They offer support, updates, and special tools. Big companies pay for this help so their computers run smoothly and safely.
+________________________________________
+6. Command to show today’s date and time:
+Type this in the terminal:
+bash
+date
+________________________________________
+7. Command to check how long the system has been running:
+Type this in the terminal:
+bash
+uptime
+________________________________________
+8. Difference between shutdown -h now and halt:
+•	shutdown -h now turns off the computer safely, closing everything first.
+•	halt just stops the computer right away, which can be risky.
+________________________________________
+9. Compare init 0 and shutdown -h. Which is safer?
+•	init 0 stops the computer, but doesn’t always warn programs.
+•	shutdown -h warns programs and users, so it’s safer and helps prevent problems.
+________________________________________
+10. What happens if you power off without shutting down?
+If you just turn off the power without shutting down:
+•	Files can get messed up or lost.
+•	You might lose work you didn’t save.
+•	The computer could have trouble starting next time.
