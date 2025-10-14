@@ -1,0 +1,68 @@
+NAME:SARAVANA BALAJI K
+USN:ENG24CY0158
+CLASS:3A
+ROLL-NO:26
+1.	What is the difference between man and whatis commands?
+•	The man command gives you a full guide about a command with all its details.
+•	The whatis command gives a short one-line explanation of what the command does.
+Example:
+If you type whatis ls, you get a quick answer like "ls - list files".
+But if you type man ls, you get a full page explaining how to use ls.
+________________________________________
+2.	How to use tee to save the output of ls -l and still see it on the screen?
+ls -l | tee file.txt
+You will see the list of files on the screen, and it also saves the same list to file.txt.
+________________________________________
+3.	How to use tee for logging?
+If you want to save what a command prints and also see it live, do:
+your_command | tee log.txt
+This way, you watch the output and save it to log.txt.
+________________________________________
+4.	How to install Ubuntu 25.04 on VirtualBox?
+•	Download Ubuntu ISO file.
+•	Open VirtualBox and create a new virtual machine.
+•	Set the name, select Linux type.
+•	Choose how much memory (RAM).
+•	Make a virtual hard disk.
+•	Start the machine and select the Ubuntu ISO to boot.
+•	Follow the Ubuntu install steps on screen.
+•	Restart the virtual machine when done.
+________________________________________
+5.	If you get a Kernel Panic error during Ubuntu install, what to do?
+•	Don’t worry, it means the system had a serious problem.
+•	Try booting in recovery mode.
+•	Check if important system files are missing or broken.
+•	Make sure your hardware is okay and supported.
+•	Look at error messages carefully.
+•	Free some disk space if needed.
+•	Try installing again if things don’t work.
+________________________________________
+6.	How to see your computer’s hostname and change it using sysctl?
+•	To see the hostname, type:
+hostname
+•	To change it temporarily, use:
+sudo sysctl kernel.hostname=newname
+•	To make the change permanent, add kernel.hostname=newname in /etc/sysctl.conf and run:
+sudo sysctl -p /etc/sysctl.conf
+________________________________________
+7.	How to show the calendar for August 1984?
+Type:
+cal 8 1984
+You’ll see the calendar for that month and year.
+________________________________________
+8.	How to view system uptime and logged-in users together?
+Type either:
+uptime; w
+or just:
+w
+This shows how long the system has been running and who is logged in.
+________________________________________
+9.	Find all .c files in /home/user
+Type:
+find /home/user -type f -name "*.c"
+This lists all files with .c ending inside /home/user.
+________________________________________
+10.	How to set file permission so only the owner can read and write?
+Type:
+chmod 600 filename
+This means only you can open and edit the file; no one else can.
