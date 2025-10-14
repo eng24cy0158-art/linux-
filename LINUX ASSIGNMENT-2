@@ -1,0 +1,61 @@
+NAME:SARAVANA BALAJI K
+USN:ENG24CY0158
+CLASS:3A
+ROLL-NO:26
+1. What do the commands pwd, whoami, and hostname show?
+•	pwd tells you the exact folder you’re currently in. Think of it as asking, “Where am I right now in the computer’s file system?”
+•	whoami simply tells you which user you’re logged in as. It’s like asking, “Who am I on this computer?”
+•	hostname shows the name of your computer on the network. If your computer was a person at a party, this would be its nametag.
+_________________________________________
+2. How do you create a folder called “project” inside /home/student and put three .txt files in it?
+•	First, make the folder:
+bash
+mkdir /home/student/project
+•	Next, create three text files inside that folder:
+bash
+touch /home/student/project/file1.txt /home/student/project/file2.txt /home/student/project/file3.txt
+•	To check that they’re there, you can list the files:
+bash
+ls /home/student/project
+________________________________________
+3. What’s the difference between an absolute path and a relative path?
+•	An absolute path is like giving someone your full home address, starting from the country. For example: /home/student/project/file1.txt.
+•	A relative path is like giving directions from where you are right now. If you’re already in /home/student, you can just say project/file1.txt.
+________________________________________
+4. How can you see the list of commands you’ve already run in the terminal?
+•	Just type:
+bash
+history
+•	This will show you a numbered list of all the commands you’ve used recently.
+________________________________________
+5. What’s the difference between find and locate? Which is faster?
+•	find searches your files and folders live, so it’s always up-to-date but can be slow if you have a lot of files.
+•	locate is super fast because it looks things up in a database that’s updated from time to time. But if you just created a file, locate might not find it until the database updates.
+•	So, locate is faster, but find is always current.
+________________________________________
+6. How do you change file permissions in Linux?
+•	Use the chmod command. For example:
+bash
+chmod 644 filename.txt
+•	This means the owner can read and write, but everyone else can only read.
+________________________________________
+7. What does -rw-r--r-- mean for a file?
+•	The owner can read and write the file.
+•	Everyone else (group and others) can only read it.
+•	So, only the owner can make changes, but anyone can open and look at it.
+________________________________________
+8. What’s the difference between chown and chgrp?
+•	chown changes who owns the file. For example, chown alice file.txt makes Alice the owner.
+•	chgrp changes the group that owns the file. For example, chgrp students file.txt puts the file in the "students" group.
+________________________________________
+9. How do you make a file readable by everyone, but only writable by the owner?
+•	Set the permissions like this:
+bash
+chmod 644 filename.txt
+•	Now, everyone can read the file, but only the owner can change it.
+________________________________________
+10. How do you check the manual (help) page for a Linux command?
+•	Type man followed by the command name. For example:
+bash
+man ls
+•	This opens up a help page with details about how to use the command.
